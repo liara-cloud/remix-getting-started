@@ -1,36 +1,19 @@
-# Welcome to Remix + Vite!
+# Remix Getting Started
 
-📖 See the [Remix docs](https://remix.run/docs) and the [Remix Vite docs](https://remix.run/docs/en/main/guides/vite) for details on supported features.
+Create [New NodeJS App](https://console.liara.ir/apps/create) & install the [Liara CLI](https://docs.liara.ir/cli/install)
 
-## Development
-
-Run the Vite dev server:
-
-```shellscript
-npm run dev
+```
+git clone https://github.com/liara-cloud/remix-getting-started.git # or clone your own fork
+```
+```
+cd remix-getting-started
+```
+```
+liara login
+```
+```
+liara deploy --port 3000 --platform node
 ```
 
-## Deployment
-
-First, build your app for production:
-
-```sh
-npm run build
-```
-
-Then run the app in production mode:
-
-```sh
-npm start
-```
-
-Now you'll need to pick a host to deploy it to.
-
-### DIY
-
-If you're familiar with deploying Node applications, the built-in Remix app server is production-ready.
-
-Make sure to deploy the output of `npm run build`
-
-- `build/server`
-- `build/client`
+## Docs
+- [Liara](https://docs.liara.ir)
