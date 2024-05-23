@@ -1,29 +1,45 @@
 import {
-  Links,
   Meta,
-  Outlet,
+  MetaFunction,
   Scripts,
-  ScrollRestoration,
+  Links,
+  LiveReload,
+  Outlet,
 } from "@remix-run/react";
 
-export function Layout({ children }: { children: React.ReactNode }) {
+import type { LinksFunction } from "@remix-run/node"; // or cloudflare/deno
+
+export const meta: MetaFunction = () => {
+  return [  
+ {
+  charset: "utf-8",
+  title: "Deployed to Liara",
+  viewport: "width=device-width,initial-scale=1",
+ },
+  ];
+};
+
+export const links: LinksFunction = () => {
+  return [
+  { rel: "stylesheet", href: "/css/app.css" },
+  { rel: "shortcut icon", href: "/images/favicon.ico" },
+  ];
+};
+
+function App() {
   return (
     <html lang="en">
       <head>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <Meta />
         <Links />
       </head>
       <body>
-        {children}
-        <ScrollRestoration />
+        <Outlet />
         <Scripts />
+        <LiveReload />
       </body>
     </html>
   );
 }
 
-export default function App() {
-  return <Outlet />;
-}
+export default App;
